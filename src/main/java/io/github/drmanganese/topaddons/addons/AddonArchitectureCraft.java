@@ -13,7 +13,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import com.elytradev.architecture.common.shape.Shape;
+import com.elytradev.architecture.common.shape.EnumShape;
 import mcjty.theoneprobe.Tools;
 import mcjty.theoneprobe.api.ElementAlignment;
 import mcjty.theoneprobe.api.IBlockDisplayOverride;
@@ -46,7 +46,7 @@ public class AddonArchitectureCraft extends AddonBlank {
     }
 
     private static String getShapeName(ItemStack pickBlock) {
-        return Shape.forId(pickBlock.getTagCompound().getInteger("Shape")).title;
+        return EnumShape.forId(pickBlock.getTagCompound().getInteger("Shape")).getLocalizedShapeName();
     }
 
     @Override
